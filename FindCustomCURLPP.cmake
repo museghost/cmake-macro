@@ -6,6 +6,6 @@ function(find_custom_curlpp _NAME _VER)
 
     set_min_library_version(${_NAME_UPPER} ${_VER})
 
-    find_custom_library(${_NAME_UPPER} libcurlpp ${${_NAME_UPPER}_CUSTOM_MIN_VER})
+    find_custom_library(${_NAME_UPPER} curlpp ${${_NAME_UPPER}_CUSTOM_MIN_VER})
    
 endfunction()
