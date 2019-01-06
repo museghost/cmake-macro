@@ -34,7 +34,7 @@ function(find_custom_library _NAME _LIBS _VER)
         endif()
     else()
         message(STATUS "Manually set ${_NAME} path: ${${_NAME}_CUSTOM_PATH}")
-        set(ENV{PKG_CONFIG_PATH} "${${_NAME}_CUSTOM_PATH}/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
+        set(ENV{PKG_CONFIG_PATH} "${${_NAME}_CUSTOM_PATH}/lib/pkgconfig")
         message(STATUS "pkg_config_path : $ENV{PKG_CONFIG_PATH}")
 
         include(FindPkgConfig)
