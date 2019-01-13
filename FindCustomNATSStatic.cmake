@@ -10,8 +10,7 @@
 set(NATS_STATIC_DEFINITIONS ${NATS_CFLAGS_OTHER})
 
 find_path(NATS_STATIC_INCLUDE_DIR nats/nats.h
-        HINTS ${NATS_INCLUDEDIR} ${NATS_INCLUDE_DIRS}
-        PATH_SUFFIXES nats )
+        HINTS ${NATS_INCLUDEDIR} ${NATS_INCLUDE_DIRS})
 
 find_library(NATS_STATIC_LIBRARY NAMES nats.a libnats_static.a libnats.a
         HINTS ${NATS_LIBDIR} ${NATS_LIBRARY_DIRS} )

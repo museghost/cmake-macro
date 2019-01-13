@@ -6,6 +6,6 @@ function(find_custom_nats _NAME _VER)
 
     set_min_library_version(${_NAME_UPPER} ${_VER})
 
-    find_custom_library(${_NAME_UPPER} nats ${${_NAME_UPPER}_CUSTOM_MIN_VER})
+    find_custom_library(${_NAME_UPPER} cnats ${${_NAME_UPPER}_CUSTOM_MIN_VER})
 
 endfunction()
