@@ -1,0 +1,12 @@
+if (DEFINED BSVENDOR_DIR)
+    message(STATUS "BSVENDOR_DIR is detected: ${BSVENDOR_DIR}")
+else()
+    set(BSVENDOR_DIR "/usr/local")
+    message(STATUS "BSVENDOR_DIR set to default /usr/local")
+endif()
+
+if(DEFINED ENV{BSVENDOR_DIR})
+    message(STATUS "ENV{BSVENDOR_DIR} is detected: $ENV{BSVENDOR_DIR}, $BSVENDOR_DIR set to ENV{BSVENDOR_DIR}")
+    set(BSVENDOR_DIR $ENV{BSVENDOR_DIR})
+endif()
+message(STATUS "finally set BSVENDOR_DIR: ${BSVENDOR_DIR}")
