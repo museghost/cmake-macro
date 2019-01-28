@@ -47,11 +47,8 @@ function(find_custom_library _NAME _LIBS _VER)
         message(STATUS "1st - find_package")
         find_package(${_NAME} ${_VER} QUIET CONFIG
                 HINTS
-                "${${_NAME}_CUSTOM_PATH}/lib/cmake"
-                "/mingw64/lib/cmake"
-                "/mingw32/lib/cmake"
-                "/usr/local/lib/cmake"
-                "/usr/lib/cmake")
+                    "${${_NAME}_CUSTOM_PATH}/lib/cmake"
+                )
 
         if(${_NAME}_FOUND)
             set(${_NAME}_VERSION ${${_NAME}_VERSION_STRING})
@@ -61,7 +58,7 @@ function(find_custom_library _NAME _LIBS _VER)
             set(OLD_PKG_CONFIG_PATH "$ENV{PKG_CONFIG_PATH}")
             unset(ENV{PKG_CONFIG_PATH})
 
-            set(ENV{PKG_CONFIG_PATH} "${${_NAME}_CUSTOM_PATH}/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig")
+            set(ENV{PKG_CONFIG_PATH} "${${_NAME}_CUSTOM_PATH}/lib/pkgconfig")
             message(STATUS "pkg_config_path : $ENV{PKG_CONFIG_PATH}")
 
             include(FindPkgConfig)
